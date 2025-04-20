@@ -16,32 +16,36 @@ public class conditionalMethods {
 				//get(url)
 				driver.get("https://demo.nopcommerce.com/register");
 				driver.manage().window().maximize();
-
-				//isDisplayed()
 				
-		WebElement logo =driver.findElement(By.xpath("//img[@alt='nopCommerce demo store']"));
+				
+				//isDisplay()
+				
+				WebElement logo=driver.findElement(By.xpath("//img[@alt='nopCommerce demo store']"));
+				System.out.println("Status of element:  "+logo.isDisplayed());
+				
+				
+				//isEnabled
+				Boolean sts=driver.findElement(By.xpath("//input[@id='FirstName']")).isEnabled();
+				
+				System.out.println("Status of input box:  "+sts);
+				
+				//isSelected
+				
+				WebElement Female=driver.findElement(By.xpath("//input[@id='gender-female']"));
+				
+				WebElement male=driver.findElement(By.xpath("//input[@id='gender-male']"));
+				
+				
+				System.out.println("Before selecting...");
+				System.out.println(male.isSelected());
+				System.out.println(Female.isSelected());
+				
+//				male.click();
+				Female.click();
 
-		System.out.println("status of logo: "+logo.isDisplayed());
-		
-		
-		//isEnabled()
-		
-		boolean status= driver.findElement(By.xpath("//input[@id='FirstName']")).isEnabled();
-		
-		System.out.println("status of input box : "+status);
-		
-		WebElement male=driver.findElement(By.xpath("//input[@id='gender-male']"));
-		WebElement female=driver.findElement(By.xpath("//input[@id='gender-female']"));
-		
-		System.out.println("before selection...");
-		System.out.println(male.isSelected());
-		System.out.println(female.isSelected());
-		
-		male.click();
-		
-		System.out.println("after selection...");
-		System.out.println(male.isSelected());
-		System.out.println(female.isSelected());
+				System.out.println("after selecting...");
+				System.out.println(male.isSelected());
+				System.out.println(Female.isSelected());
 	}
 
 }

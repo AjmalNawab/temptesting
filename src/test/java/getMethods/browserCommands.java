@@ -14,11 +14,15 @@ public class browserCommands {
 		//get(url)
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//a[normalize-space()='OrangeHRM, Inc']")).click();
+		
+		driver.findElement(By.xpath("//a[normalize-space()='OrangeHRM, Inc']")).click();	
 		Thread.sleep(5000);
+		
+		//browser methods
 		
 //		driver.close();
 		driver.quit();
+		
 	}
 
 }
